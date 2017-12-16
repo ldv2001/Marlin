@@ -181,7 +181,7 @@
  * The fan will turn on automatically whenever any stepper is enabled
  * and turn off after a set period after all steppers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
   //#define CONTROLLER_FAN_PIN FAN1_PIN  // Set a custom pin for the controller fan
   #define CONTROLLERFAN_SECS 60          // Duration in seconds for the fan to run after all motors are disabled
@@ -346,11 +346,11 @@
 // @section homing
 
 //homing hits the endstop, then retracts by this distance, before it tries to slowly bump again:
-#define X_HOME_BUMP_MM 5
-#define Y_HOME_BUMP_MM 5
-#define Z_HOME_BUMP_MM 2
+#define X_HOME_BUMP_MM 10
+#define Y_HOME_BUMP_MM 10
+#define Z_HOME_BUMP_MM 3
 #define HOMING_BUMP_DIVISOR {2, 2, 4}  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
-//#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
+#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
 
 // When G28 is called, this option will make Y home before X
 //#define HOME_Y_BEFORE_X
@@ -370,8 +370,8 @@
 
 // Default stepper release if idle. Set to 0 to deactivate.
 // Steppers will shut down DEFAULT_STEPPER_DEACTIVE_TIME seconds after the last move when DISABLE_INACTIVE_? is true.
-// Time can be set by M18 and M84.
-#define DEFAULT_STEPPER_DEACTIVE_TIME 120
+// Time can be set by M18 and M84.A
+#define DEFAULT_STEPPER_DEACTIVE_TIME 300
 #define DISABLE_INACTIVE_X true
 #define DISABLE_INACTIVE_Y true
 #define DISABLE_INACTIVE_Z true  // set to false if the nozzle will fall down on your printed part when print has finished.
@@ -455,16 +455,16 @@
 // @section lcd
 
 // Include a page of printer information in the LCD Main Menu
-//#define LCD_INFO_MENU
+#define LCD_INFO_MENU
 
 // Scroll a longer status message into view
-//#define STATUS_MESSAGE_SCROLLING
+#define STATUS_MESSAGE_SCROLLING
 
 // On the Info Screen, display XY with one decimal place when possible
 //#define LCD_DECIMAL_SMALL_XY
 
 // The timeout (in ms) to return to the status screen from sub-menus
-//#define LCD_TIMEOUT_TO_STATUS 15000
+#define LCD_TIMEOUT_TO_STATUS 120000
 
 #if ENABLED(SDSUPPORT)
 
