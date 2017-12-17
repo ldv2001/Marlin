@@ -515,10 +515,10 @@
 // @section motion
 
 #define NEMA17_FULLSTEPS 200
-#define NEMA17_MICROSTEPs 16
+#define NEMA17_MICROSTEPS 16
 #define NEMA17_STEPS ( NEMA17_FULLSTEPS * NEMA17_MICROSTEPS )
 
-#define PULLEY_PITCH 2.0
+#define PULLEY_PITCH 2.5
 #define PULLEY_TEETH 19
 #define ROD_PITCH 1.5
 
@@ -555,7 +555,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 160, 160, 5, 25, 10000 }
+#define DEFAULT_MAX_FEEDRATE          { 160, 160, 5, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
